@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <title>Easier Search nhentai</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <input type="text" id="search" placeholder="Search term" />
+    <button onclick="modifyCriteria('search', true)">Include</button>
+    <button onclick="modifyCriteria('search', false)">Exclude</button>
+    <span id="searchLog"></span><br />
+
+    <input type="text" id="parody" list="parodyList" placeholder="Parody" />
+    <datalist id="parodyList"></datalist>
+    <button onclick="modifyCriteria('parody', true)">Include</button>
+    <button onclick="modifyCriteria('parody', false)">Exclude</button>
+    <span id="parodyLog"></span><br />
+
+    <input
+      type="text"
+      id="character"
+      list="characterList"
+      placeholder="Character"
+    />
+    <datalist id="characterList"></datalist>
+    <button onclick="modifyCriteria('character', true)">Include</button>
+    <button onclick="modifyCriteria('character', false)">Exclude</button>
+    <span id="characterLog"></span><br />
+
+    <input type="text" id="tag" list="tagList" placeholder="Tag" />
+    <datalist id="tagList"></datalist>
+    <button onclick="modifyCriteria('tag', true)">Include</button>
+    <button onclick="modifyCriteria('tag', false)">Exclude</button>
+    <span id="tagLog"></span><br />
+
+    <input type="text" id="artist" list="artistList" placeholder="Artist" />
+    <datalist id="artistList"></datalist>
+    <button onclick="modifyCriteria('artist', true)">Include</button>
+    <button onclick="modifyCriteria('artist', false)">Exclude</button>
+    <span id="artistLog"></span><br />
+
+    <input type="text" id="group" list="groupList" placeholder="Group" />
+    <datalist id="groupList"></datalist>
+    <button onclick="modifyCriteria('group', true)">Include</button>
+    <button onclick="modifyCriteria('group', false)">Exclude</button>
+    <span id="groupLog"></span><br />
+
+    <input type="number" id="minPages" placeholder="Min Pages" min="0" />
+    <input type="number" id="maxPages" placeholder="Max Pages" min="0" /><br />
+
+    <div class="language-select-wrapper">
+      <select id="language">
+        <option value="">Select Language</option>
+        <option value="english">English</option>
+        <option value="chinese">Chinese</option>
+        <option value="japanese">Japanese</option>
+      </select>
+      <label> <input type="checkbox" id="translated" />Translated</label>
+    </div>
+
+    <div class="date-range-wrapper">
+      <label for="uploadedAfter">Uploaded On or After: </label>
+      <input type="date" id="uploadedAfter" />
+      <label for="uploadedBefore">Uploaded On or Before: </label>
+      <input type="date" id="uploadedBefore" />
+    </div>
+
+    <select id="sort">
+      <option value="recent" selected>Recent</option>
+      <option value="popular-today">Popular Today</option>
+      <option value="popular-week">Popular Week</option>
+      <option value="popular">Popular All Time</option>
+    </select>
+
+    <br />
+    <br />
+
+    <button onclick="generateLink()">Generate Link</button>
+    <button onclick="copyLink()">Copy Link</button>
+    <button onclick="resetCriteria()">Reset</button>
+
+    <a id="generatedLink" href="#" target="_blank"></a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
