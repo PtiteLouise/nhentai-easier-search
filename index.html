@@ -52,13 +52,23 @@
     <input type="number" id="maxPages" placeholder="Max Pages" min="0" /><br />
 
     <div class="language-select-wrapper">
+      <label for="language">Select Language:</label>
       <select id="language">
-        <option value="">Select Language</option>
+        <option value="">Language</option>
         <option value="english">English</option>
         <option value="chinese">Chinese</option>
         <option value="japanese">Japanese</option>
       </select>
-      <label> <input type="checkbox" id="translated" />Translated</label>
+      <label> <input type="checkbox" id="translated" />Is a Translation</label>
+    </div>
+
+    <div class="category-select-wrapper">
+      <label for="category">Select Category:</label>
+      <select id="category">
+        <option value="">Category</option>
+        <option value="manga">Manga</option>
+        <option value="doujinshi">Doujinshi</option>
+      </select>
     </div>
 
     <div class="date-range-wrapper">
@@ -68,12 +78,15 @@
       <input type="date" id="uploadedBefore" />
     </div>
 
-    <select id="sort">
-      <option value="recent" selected>Recent</option>
-      <option value="popular-today">Popular Today</option>
-      <option value="popular-week">Popular Week</option>
-      <option value="popular">Popular All Time</option>
-    </select>
+    <div class="sort-select-wrapper">
+      <label for="sort">Sorted by:</label>
+      <select id="sort">
+        <option value="recent" selected>Recent</option>
+        <option value="popular-today">Popular Today</option>
+        <option value="popular-week">Popular Week</option>
+        <option value="popular">Popular All Time</option>
+      </select>
+    </div>
 
     <br />
     <br />

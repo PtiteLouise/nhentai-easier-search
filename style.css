@@ -52,6 +52,8 @@ select {
 }
 
 .language-select-wrapper,
+.category-select-wrapper,
+.sort-select-wrapper,
 .date-range-wrapper {
   margin: 10px 0;
 }

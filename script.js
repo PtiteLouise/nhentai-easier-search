@@ -66,6 +66,12 @@ function generateLink() {
     }
   }
 
+  // Add category to queryParts if selected
+  var category = document.getElementById("category").value;
+  if (category) {
+    queryParts.push(`+category:${category}`);
+  }
+
   var generatedLinkElement = document.getElementById("generatedLink");
 
   if (queryParts.join("").trim() === "") {
@@ -109,6 +115,7 @@ function resetCriteria() {
     });
   document.getElementById("sort").value = "recent";
   document.getElementById("language").value = "";
+  document.getElementById("category").value = "";
   document.querySelectorAll('span[id$="Log"]').forEach(function (span) {
     span.innerHTML = "";
   });
