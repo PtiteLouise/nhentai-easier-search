@@ -25,6 +25,29 @@ function updateLogDisplay(type) {
   });
 }
 
+function addRandomTag() {
+  fetch("/tag.json")
+    .then((response) => response.json())
+    .then((tags) => {
+      const existingTags = criteriaLog.tag
+        ? criteriaLog.tag.map((item) =>
+            item.split(":")[1].replace(/["+-]/g, "")
+          )
+        : [];
+      let filteredTags = tags.filter((tag) => !existingTags.includes(tag));
+      if (filteredTags.length === 0) {
+        return alert("No more tags available to add.");
+      }
+      let randomTag =
+        filteredTags[Math.floor(Math.random() * filteredTags.length)];
+      document.getElementById("tag").value = randomTag;
+      modifyCriteria("tag", true);
+    })
+    .catch((error) => {
+      console.error("Error loading tags:", error);
+    });
+}
+
 function generateLink() {
   var baseUrl = "https://nhentai.net/search/?q=";
   var queryParts = [];
